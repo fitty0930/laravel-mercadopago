@@ -6,9 +6,10 @@ use Exception;
 
 /**
  * MercadoPago Integration Library
- * Access MercadoPago for payments integration 1
+ * Access MercadoPago for payments integration 
  * 
  * @author hcasatti
+ * @author fitty0930 (modified notifications)
  *
  */
 $GLOBALS["LIB_LOCATION"] = dirname(__FILE__);
@@ -88,7 +89,7 @@ class MP {
         $uri_prefix = $this->sandbox ? "/sandbox" : "";
             
         $request = array(
-            "uri" => $uri_prefix."/collections/notifications/{$id}",
+            "uri" => $uri_prefix."/v1/payments/{$id}",
             "params" => array(
                 "access_token" => $this->get_access_token()
             )
